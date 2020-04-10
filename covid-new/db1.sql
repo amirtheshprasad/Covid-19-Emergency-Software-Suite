@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 04, 2020 at 08:50 PM
+-- Generation Time: Apr 10, 2020 at 08:55 AM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.10
 
@@ -31,18 +31,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `euser` (
   `eid` int(11) NOT NULL,
   `eno` int(11) NOT NULL,
-  `epin` int(11) NOT NULL
+  `epin` int(11) NOT NULL,
+  `ecountry` varchar(255) NOT NULL,
+  `ecity` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `euser`
 --
 
-INSERT INTO `euser` (`eid`, `eno`, `epin`) VALUES
-(1, 1234, 333),
-(2, 1234, 333),
-(3, 1234, 333),
-(4, 1, 1);
+INSERT INTO `euser` (`eid`, `eno`, `epin`, `ecountry`, `ecity`) VALUES
+(3, 1234, 333, '', ''),
+(4, 1, 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -60,15 +60,10 @@ CREATE TABLE `guser` (
   `gshortbreathe` varchar(225) NOT NULL,
   `gother` varchar(225) NOT NULL,
   `gmdetails` varchar(225) DEFAULT NULL,
-  `gpin` int(225) NOT NULL
+  `gpin` int(225) NOT NULL,
+  `gcountry` varchar(255) NOT NULL,
+  `gcity` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `guser`
---
-
-INSERT INTO `guser` (`gid`, `gno`, `gname`, `gcough`, `gfever`, `gtired`, `gshortbreathe`, `gother`, `gmdetails`, `gpin`) VALUES
-(1, 1111, 'aaa', 'yes', 'yes', 'no', 'no', '', NULL, 33);
 
 -- --------------------------------------------------------
 
@@ -94,16 +89,18 @@ CREATE TABLE `ouser` (
   `ouname` varchar(255) NOT NULL,
   `oupass` varchar(255) NOT NULL,
   `privilege` varchar(255) NOT NULL,
-  `oemail` varchar(255) NOT NULL
+  `oemail` varchar(255) NOT NULL,
+  `ocountry` varchar(255) NOT NULL,
+  `ocity` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `ouser`
 --
 
-INSERT INTO `ouser` (`oid`, `ouname`, `oupass`, `privilege`, `oemail`) VALUES
-(1, 'ak', 'amith', '', 'amith@y.com'),
-(2, '', '', '', '');
+INSERT INTO `ouser` (`oid`, `ouname`, `oupass`, `privilege`, `oemail`, `ocountry`, `ocity`) VALUES
+(1, 'ak', 'amith', '', 'amith@y.com', '', ''),
+(2, '', '', '', '', '', '');
 
 --
 -- Indexes for dumped tables
